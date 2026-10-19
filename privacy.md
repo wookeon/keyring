@@ -17,7 +17,7 @@ Keyring(이하 "앱")은 사용자의 계정 정보(사이트 주소, 아이디,
 
 ## 정보의 처리와 보관
 
-수집한 정보는 Google LLC(미국)가 운영하는 Firebase 서버로 전송되어 처리되며, Google 개인정보처리방침(https://policies.google.com/privacy)을 따릅니다. 오류 정보는 90일, 사용 정보는 Google Analytics 의 데이터 보관 기간 설정에 따라 보관된 뒤 삭제됩니다.
+수집한 정보는 Google LLC(미국)가 운영하는 Firebase 서버로 전송되어 처리되며, Google 개인정보처리방침(https://policies.google.com/privacy)을 따릅니다. 오류 정보는 90일, 사용 정보는 최대 14개월 보관된 뒤 삭제됩니다.
 
 ## 저장 위치
 

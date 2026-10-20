@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keyring for Mac</title>
+  <meta name="description" content="메뉴 막대에서 쓰는 Mac 계정 관리 앱. Safari·Chrome·Comet 로그인 칸에 아이디·비밀번호·OTP 를 채웁니다.">
+  <link rel="icon" href="assets/favicon.png">
+  <style>
+    :root {
+      --canvas: #f4f6f2; --surface: #fff; --text: #28352d; --muted: #6b796f;
+      --border: #e3e7e1; --accent: #526f5b; --on-accent: #fff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --canvas: #151916; --surface: #1f2421; --text: #e7ece8; --muted: #9aa79e;
+        --border: #333a35; --accent: #6f9b7a; --on-accent: #10140f;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--text);
+           font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; }
+    main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+    a { color: var(--accent); }
+    header { padding: 72px 0 48px; text-align: center; }
+    header img { width: 112px; height: 112px; }
+    h1 { margin: 16px 0 8px; font-size: clamp(32px, 6vw, 44px); line-height: 1.2; }
+    .lead { margin: 0 auto; max-width: 560px; color: var(--muted); font-size: 18px; }
+    .download { display: inline-block; margin-top: 28px; padding: 14px 28px; border-radius: 12px;
+                background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
+    .note { margin-top: 12px; color: var(--muted); font-size: 14px; }
+    section { padding: 32px 0; }
+    h2 { margin: 0 0 16px; font-size: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    .card { padding: 20px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+    .card h3 { margin: 0 0 6px; font-size: 17px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    ol { margin: 0; padding: 20px 20px 20px 44px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+    ol li + li { margin-top: 8px; }
+    footer { padding: 32px 0 56px; color: var(--muted); font-size: 14px; text-align: center; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="assets/icon.png" alt="Keyring 아이콘">
+    <h1>Keyring for Mac</h1>
+    <p class="lead">메뉴 막대에서 쓰는 계정 관리 앱입니다. Safari, Chrome, Comet 의 로그인 칸에 아이디·비밀번호·OTP 를 바로 채웁니다.</p>
+    <a class="download" href="https://github.com/wookeon/keyring/releases/latest/download/Keyring.dmg">Mac 용 다운로드</a>
+    <p class="note">macOS 26 이상 · Apple 공증 완료</p>
+  </header>
+
+  <section>
+    <h2>기능</h2>
+    <div class="grid">
+      <div class="card"><h3>브라우저에서 바로 입력</h3><p>Safari, Chrome, Comet 확장 프로그램이 로그인 칸 아래에 그 사이트의 계정을 보여 줍니다.</p></div>
+      <div class="card"><h3>로그인하면 저장 제안</h3><p>새 계정으로 로그인하면 Keyring 에 저장할지 묻고, 비밀번호가 바뀌면 업데이트를 제안합니다.</p></div>
+      <div class="card"><h3>OTP 코드</h3><p>2단계 인증 QR 을 등록해 두면 인증 코드도 함께 채웁니다. 메일로 코드가 오는 사이트는 메일함을 열어 줍니다.</p></div>
+      <div class="card"><h3>Mac 암호 자동 완성</h3><p>앱 로그인 화면에서도 macOS 자동 완성으로 Keyring 의 계정을 고를 수 있습니다.</p></div>
+      <div class="card"><h3>iCloud 동기화</h3><p>같은 Apple 계정으로 로그인한 Mac 끼리 계정을 자동으로 맞춥니다.</p></div>
+      <div class="card"><h3>쉽게 옮겨 오기</h3><p>KeePass, Apple 암호, Chrome, Google Authenticator 에서 계정을 가져오고, KeePass 로 열리는 암호화 백업으로 내보냅니다.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>안전하게 보관합니다</h2>
+    <div class="grid">
+      <div class="card"><h3>별도 서버 없음</h3><p>계정은 이 Mac 과 내 iCloud 비공개 저장소에만 있습니다. 개발자도 볼 수 없습니다.</p></div>
+      <div class="card"><h3>필요한 계정만 전달</h3><p>확장 프로그램은 지금 연 사이트에 맞는 계정만 받습니다.</p></div>
+      <div class="card"><h3>앱 잠금</h3><p>Touch ID 나 Mac 암호로 Keyring 을 잠글 수 있습니다.</p></div>
+    </div>
+    <p class="note">사용 통계와 오류 보고는 Firebase 로 보내며 계정 정보는 포함되지 않습니다. 자세한 내용은 <a href="privacy">개인정보 처리방침</a>을 확인하세요.</p>
+  </section>
+
+  <section>
+    <h2>설치</h2>
+    <ol>
+      <li><a href="https://github.com/wookeon/keyring/releases/latest/download/Keyring.dmg">Keyring.dmg</a> 를 내려받아 엽니다.</li>
+      <li>Keyring 을 응용 프로그램 폴더로 끌어다 놓습니다.</li>
+      <li>Keyring 을 실행하면 메뉴 막대에 Keyring 아이콘이 생깁니다.</li>
+      <li>첫 화면 안내에 따라 Safari 확장을 켜거나 Chrome·Comet 확장을 설치합니다.</li>
+    </ol>
+    <p class="note">업데이트는 새 DMG 를 받아 같은 방법으로 덮어쓰면 됩니다. 저장된 계정은 그대로 남습니다. 이전 버전은 <a href="https://github.com/wookeon/keyring/releases">릴리스 목록</a>에 있습니다.</p>
+  </section>
+
+  <section>
+    <h2>지원</h2>
+    <div class="grid">
+      <div class="card"><h3>문의</h3><p><a href="mailto:seos_21c@naver.com">seos_21c@naver.com</a></p></div>
+      <div class="card"><h3>버그 제보·제안</h3><p><a href="https://github.com/wookeon/keyring/issues">GitHub Issues</a></p></div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="privacy">개인정보 처리방침</a> · © Keyring
+  </footer>
+</main>
+</body>
+</html>

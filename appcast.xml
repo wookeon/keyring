@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+    <channel>
+        <title>Keyring</title>
+        <item>
+            <title>Keyring 1.2.0</title>
+            <pubDate>Wed, 21 Oct 2026 05:06:50 +0000</pubDate>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.5</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://github.com/wookeon/keyring/releases/tag/v1.2.0</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/wookeon/keyring/releases/download/v1.2.0/Keyring.dmg" sparkle:edSignature="qxsnlzzvDl5ym63fqzPnHq+838vLypqsyEFlvMJ9QHTbcPFmDn2JjZeO42dWVfSf+txQyzACxc2L8rJmpIPYDg==" length="7284344" type="application/octet-stream"/>
+        </item>
+    </channel>
+</rss>

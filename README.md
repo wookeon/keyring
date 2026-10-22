@@ -1,6 +1,7 @@
 | Version | Date | Status | Change |
 | --- | --- | --- | --- |
-| v0.2 | 2026-10-20 | Active | macOS 소개·다운로드 페이지로 개편, 링크 정리 |
+| v0.2 | 2026-10-20 | Superseded | macOS 소개·다운로드 페이지로 개편, 링크 정리 |
+| v0.3 | 2026-10-23 | Active | 모드·그룹, VPN 소개 추가, 개인정보 처리방침에 VPN 정보 보관 안내 |
 
 # Keyring for Mac
 

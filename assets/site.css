@@ -49,11 +49,7 @@ h3 { font-size:19px; letter-spacing:-.4px; line-height:1.5; }
 .hero-jump { display:inline-flex; gap:12px; margin-top:24px; text-decoration:none; }
 .app-showcase { width:100%; max-width:420px; justify-self:end; }
 .preview-toolbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin:0 3px 14px; color:var(--muted); font-size:12px; }
-.segmented { display:inline-flex; padding:3px; border:1px solid var(--border); border-radius:8px; background:var(--surface); }
-.segmented button { padding:3px 12px; border:0; border-radius:5px; background:transparent; color:var(--muted); font-size:12px; }
-.segmented button[aria-selected=true] { background:var(--accent-subtle); color:var(--on-subtle); font-weight:600; }
 .app-frame { width:100%; height:500px; margin-inline:auto; overflow:hidden; background:var(--canvas); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); font-size:13px; line-height:1.45; }
-.phone-status { display:none; }
 #app-screen { height:100%; display:flex; flex-direction:column; }
 .app-head { display:flex; align-items:center; gap:10px; padding:16px; background:var(--canvas); }
 .app-head .app-logo { width:36px; height:36px; border-radius:9px; }
@@ -121,15 +117,6 @@ h3 { font-size:19px; letter-spacing:-.4px; line-height:1.5; }
 .vpn-state>svg { width:36px; height:36px; color:var(--accent); }
 .vpn-state p { color:var(--muted); font-size:12px; }
 .vpn-state button { width:100%; min-height:38px; border:1px solid var(--accent); border-radius:8px; font-size:13px; }
-.app-frame[data-device=ios] { max-width:340px; border-radius:30px; border-width:5px; height:500px; }
-.app-frame[data-device=ios] .phone-status { display:flex; justify-content:space-between; padding:12px 20px 3px; font-size:10px; font-weight:600; }
-.app-frame[data-device=ios] #app-screen { height:calc(100% - 30px); }
-.app-frame[data-device=ios] .app-head { padding:10px 16px 12px; flex-wrap:wrap; gap:8px; }
-.app-frame[data-device=ios] .app-logo { display:none; }
-.app-frame[data-device=ios] .app-brand { display:contents; }
-.app-frame[data-device=ios] .app-brand strong { flex:1; font-size:26px; order:1; margin:0; }
-.app-frame[data-device=ios] .app-actions { order:2; }
-.app-frame[data-device=ios] .app-mode { order:3; width:100%; max-width:none; min-height:38px; margin-top:5px; font-size:13px; }
 .preview-caption { min-height:36px; margin-top:14px; color:var(--muted); font-size:11px; text-align:center; line-height:1.7; }
 section.wrap { padding-block:64px; border-top:1px solid var(--border); }
 .section-heading { display:flex; justify-content:space-between; align-items:flex-end; gap:32px; margin-bottom:30px; }
@@ -225,12 +212,11 @@ section.migration { display:grid; grid-template-columns:1fr 1fr; gap:80px; align
 .security-grid p { color:var(--muted); font-size:13px; line-height:1.9; }
 .note { color:var(--muted); font-size:12px; line-height:1.8; }
 .security>.note { margin-top:26px; }
-.install-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.install-grid { max-width:760px; }
 .install-card { padding:28px; border:1px solid var(--border); border-radius:16px; background:var(--surface); }
 .install-heading { display:flex; align-items:center; justify-content:space-between; gap:10px; }
 .install-heading h3 { font-size:24px; }
 .availability { padding:3px 9px; border-radius:6px; background:var(--accent-subtle); color:var(--on-subtle); font-size:11px; }
-.availability.beta { background:var(--canvas); color:var(--muted); border:1px solid var(--border); }
 .install-version { margin-top:10px; color:var(--muted); font-size:12px; }
 .install-card>p:not(.install-version):not(.note) { margin-top:20px; color:var(--muted); font-size:14px; }
 .install-card ol { padding-left:20px; margin:24px 0; font-size:14px; line-height:1.8; }
@@ -291,7 +277,6 @@ footer .wordmark { font-size:15px; margin-right:auto; }
   .feature-grid article { padding-block:22px; }
   section.migration { grid-template-columns:1fr; gap:28px; }
   .security-grid { grid-template-columns:1fr; gap:24px; }
-  .install-grid { grid-template-columns:1fr; gap:20px; }
   .faq { grid-template-columns:1fr; gap:22px; }
   .support { align-items:flex-start; flex-direction:column; gap:20px; }
   footer { gap:14px; flex-wrap:wrap; }

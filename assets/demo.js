@@ -15,9 +15,8 @@
     { id:"apple", nickname:"Apple", loginId:"jamie.kim@icloud.com", site:"apple.com", modes:["personal"], groups:["생활"], pinned:false, totp:true },
   ];
   const modeNames = { all:"전체 계정", work:"업무", personal:"개인" };
-  const state = { device:"mac", mode:"all", filter:"all", group:"", query:"", screen:"list", accountId:null, reveal:false, vpnConnected:false };
+  const state = { mode:"all", filter:"all", group:"", query:"", screen:"list", accountId:null, reveal:false, vpnConnected:false };
   const app = $("#app-screen");
-  const frame = $("#app-preview");
   const toast = $(".toast");
   const demoPassword = "Demo-Passw0rd!";
   let toastTimer;
@@ -98,7 +97,6 @@
   }
 
   function renderApp() {
-    frame.dataset.device = state.device;
     if (state.screen === "detail") {
       renderDetail();
       return;
@@ -108,7 +106,7 @@
       return;
     }
     if (state.screen === "settings") {
-      app.innerHTML = subhead("설정") + '<div class="app-body"><div class="settings-row"><strong>iCloud</strong><span>같은 Apple 계정으로 동기화</span></div><label class="settings-row"><strong>화면 모드</strong><select id="app-theme" aria-label="앱 미리보기 화면 모드"><option value="system">시스템 설정 따르기</option><option value="light">밝게</option><option value="dark">어둡게</option></select></label><div class="settings-row"><strong>앱 잠금</strong><span>' + (state.device === "ios" ? "Face ID · 기기 암호" : "Touch ID · Mac 암호") + '</span></div><p class="body-note">실제 앱의 설정에서 자동 완성, 다른 앱에서 가져오기, KDBX 백업을 관리할 수 있습니다.</p></div>';
+      app.innerHTML = subhead("설정") + '<div class="app-body"><div class="settings-row"><strong>iCloud</strong><span>같은 Apple 계정의 Mac끼리 동기화</span></div><label class="settings-row"><strong>화면 모드</strong><select id="app-theme" aria-label="앱 미리보기 화면 모드"><option value="system">시스템 설정 따르기</option><option value="light">밝게</option><option value="dark">어둡게</option></select></label><div class="settings-row"><strong>앱 잠금</strong><span>Touch ID · Mac 암호</span></div><p class="body-note">실제 앱의 설정에서 자동 완성, 다른 앱에서 가져오기, KDBX 백업을 관리할 수 있습니다.</p></div>';
       $("#app-theme").value = $("#theme").value;
       return;
     }
@@ -119,11 +117,11 @@
     const visible = modeAccounts();
     const groups = [...new Set(visible.flatMap(account => account.groups))].sort((a, b) => a.localeCompare(b, "ko"));
     if (!groups.includes(state.group)) state.group = "";
-    app.innerHTML = '<div class="app-head"><img class="app-logo" src="assets/icon.png" alt=""><div class="app-brand"><strong>' + (state.device === "ios" && state.mode !== "all" ? modeNames[state.mode] : "Keyring") + '</strong><select class="app-mode' + (state.mode === "all" ? "" : " active") + '" id="app-mode" aria-label="앱 모드 선택">' + modeOptions() + '</select></div><div class="app-actions">'
+    app.innerHTML = '<div class="app-head"><img class="app-logo" src="assets/icon.png" alt=""><div class="app-brand"><strong>Keyring</strong><select class="app-mode' + (state.mode === "all" ? "" : " active") + '" id="app-mode" aria-label="앱 모드 선택">' + modeOptions() + '</select></div><div class="app-actions">'
       + iconButton("add", "plus", "예시 계정 추가")
-      + (state.device === "mac" ? iconButton("vpn", "globe", "VPN 미리보기") : "")
+      + iconButton("vpn", "globe", "VPN 미리보기")
       + iconButton("settings", "settings", "미리보기 설정") + '</div></div>'
-      + (state.device === "mac" && state.vpnConnected ? '<div class="mode-banner">' + icon("shield") + '<p><strong>VPN 연결됨 · 업무 VPN</strong><span>예시 연결 상태</span></p><button type="button" data-app="vpn-toggle">연결 해제</button></div>' : "")
+      + (state.vpnConnected ? '<div class="mode-banner">' + icon("shield") + '<p><strong>VPN 연결됨 · 업무 VPN</strong><span>예시 연결 상태</span></p><button type="button" data-app="vpn-toggle">연결 해제</button></div>' : "")
       + '<label class="app-search">' + icon("search") + '<span class="visually-hidden">계정 검색</span><input id="account-search" type="search" placeholder="이름, 아이디, 사이트 검색" value="' + escapeHTML(state.query) + '" autocomplete="off"></label>'
       + (state.mode === "all" ? "" : '<div class="mode-banner"><p><strong>‘' + modeNames[state.mode] + '’ 모드 적용 중 · 계정 ' + visible.length + '개 표시, ' + (accounts.length - visible.length) + '개 숨김</strong><span>브라우저·자동 완성에도 같은 계정만 보입니다</span></p><button type="button" data-app="all-modes">전체 보기</button></div>')
       + '<div class="app-filters"><button type="button" data-filter="all" aria-pressed="' + (state.filter === "all") + '">전체 ' + visible.length + '</button><button type="button" data-filter="pinned" aria-pressed="' + (state.filter === "pinned") + '">고정됨 ' + visible.filter(account => account.pinned).length + '</button><select id="app-group" aria-label="계정 그룹 선택"><option value="">모든 그룹</option>' + groups.map(group => '<option' + (state.group === group ? " selected" : "") + '>' + escapeHTML(group) + '</option>').join("") + '</select></div><ul class="app-accounts" aria-label="예시 계정 목록"></ul>';
@@ -238,12 +236,6 @@
       });
     });
   }
-  tabs($(".segmented"), button => {
-    state.device = button.dataset.device;
-    if (state.device === "ios" && state.screen === "vpn") state.screen = "list";
-    frame.setAttribute("aria-labelledby", button.id);
-    renderApp();
-  });
   tabs($(".demo-tabs"), button => {
     closeDropdown();
     resetSave();

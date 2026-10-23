@@ -4,12 +4,12 @@
         <title>Keyring</title>
         <item>
             <title>Keyring 1.2.3</title>
-            <pubDate>Fri, 23 Oct 2026 04:41:18 +0000</pubDate>
-            <sparkle:version>16</sparkle:version>
+            <pubDate>Fri, 23 Oct 2026 06:21:50 +0000</pubDate>
+            <sparkle:version>17</sparkle:version>
             <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://github.com/wookeon/keyring/releases/tag/v1.2.3</sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/wookeon/keyring/releases/download/v1.2.3/Keyring.dmg" sparkle:edSignature="hM2WA9rq5SzWRYSy0+MI2Z7yFB/jeHncySab59Xh2ULWh6NLYpfYR3Xwt4OIOB5EUfmtwUWBjTyGpo9HR7b+Dg==" length="23285582" type="application/octet-stream"/>
+            <enclosure url="https://github.com/wookeon/keyring/releases/download/v1.2.3/Keyring.dmg" sparkle:edSignature="L+CGJeHsjGaXcjlFxNKUdOtJqLW7TqJhAsF+kdQM1DBYYh5QRonfA/LLpccgpn0fUQMChm3XLLkOJ8Aa9epkBg==" length="23298997" type="application/octet-stream"/>
         </item>
     </channel>
 </rss>

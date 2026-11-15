@@ -3,13 +3,13 @@
     <channel>
         <title>Keyring</title>
         <item>
-            <title>Keyring 1.5.0</title>
-            <pubDate>Fri, 13 Nov 2026 07:18:32 +0000</pubDate>
-            <sparkle:version>32</sparkle:version>
-            <sparkle:shortVersionString>1.5.0</sparkle:shortVersionString>
+            <title>Keyring 1.5.1</title>
+            <pubDate>Sun, 15 Nov 2026 11:20:42 +0000</pubDate>
+            <sparkle:version>33</sparkle:version>
+            <sparkle:shortVersionString>1.5.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.5</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://github.com/wookeon/keyring/releases/tag/v1.5.0</sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/wookeon/keyring/releases/download/v1.5.0/Keyring.dmg" sparkle:edSignature="WFKyA4LXQm2wDE28cxrljcipDaK7lv08OEqD3HOnq6ihsWTUTSqoOC6yKbuwTebaBqDRrDFFWOtrLeFdXmlbBQ==" length="24347154" type="application/octet-stream"/>
+            <sparkle:releaseNotesLink>https://github.com/wookeon/keyring/releases/tag/v1.5.1</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/wookeon/keyring/releases/download/v1.5.1/Keyring.dmg" sparkle:edSignature="ftpI1CjYu3BkNS7veQIBQSJlv9jHmFoKR8Ugtd3RAtXPazv6eTgGSQltle9TSPMdtmbYqCe0CAMvjKd+YDaxCQ==" length="24350742" type="application/octet-stream"/>
         </item>
     </channel>
 </rss>
